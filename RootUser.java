@@ -1,19 +1,13 @@
-public class RootUser {
-    private int UID = 0;
-    private int GID = 0;
-    private String userName = "root";
-    private String name = "Super user";
-    private String home = "/root";
-    private String shell = "/bin/sh";
-  
-    private final static RootUser INSTANCE = new RootUser();
-  
-    private RootUser() {}
-  
-    public static RootUser getInstance() {
-        return INSTANCE;
-    }
-  
+public enum RootUser {
+    INSTANCE;
+
+    private final int UID = 0;
+    private final int GID = 0;
+    private final String userName = "root";
+    private final String name = "Super user";
+    private final String home = "/root";
+    private final String shell = "/bin/sh";
+
     @Override
     public String toString() {
         return new StringBuilder(userName)
@@ -23,4 +17,4 @@ public class RootUser {
             .append("shell: ").append(shell)
             .toString();
     }
-  }
+}
